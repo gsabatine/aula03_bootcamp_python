@@ -55,26 +55,72 @@
 # a R$ 10.000 ou se ocorrer fora do horário comercial (antes das 9h ou depois das 18h). 
 # Dada uma transação como `transacao = {'valor': 12000, 'hora': 20}`, verifique se ela é suspeita.
 
-transacao = {'valor': 10000, 'hora': 17}
-if transacao['valor'] > 10000 or transacao['hora'] < 9 or transacao['hora'] > 18:
-    print("Transação suspeita")
-else:
-    print("Transação normal")
+# transacao = {'valor': 10000, 'hora': 17}
+# if transacao['valor'] > 10000 or transacao['hora'] < 9 or transacao['hora'] > 18:
+#     print("Transação suspeita")
+# else:
+#     print("Transação normal")
 
 ### Exercício 6. Contagem de Palavras em Textos
 # Objetivo:** Dado um texto, contar quantas vezes cada palavra única aparece nele.
+# texto = "a raposa marrom salta sobre o cachorro preguiçoso"
+# palavras = texto.split()
+# contagem_palavras = {}
+
+# for palavra in palavras:
+#     if palavra in contagem_palavras:
+#         contagem_palavras[palavra] += 1
+#     else:
+#         contagem_palavras[palavra] = 1
+
+# print(contagem_palavras)
 
 ### Exercício 7. Normalização de Dados
 # Objetivo:** Normalizar uma lista de números para que fiquem na escala de 0 a 1.
+# numeros = [10, 20, 30, 40, 50]
+# minimo = min(numeros)
+# maximo = max(numeros)
+# normalizados = [(x - minimo) / (maximo - minimo) for x in numeros]
+
+# print(normalizados)
 
 ### Exercício 8. Filtragem de Dados Faltantes
 # Objetivo:** Dada uma lista de dicionários representando dados de usuários, filtrar aqueles que têm um campo específico faltando
+# usuarios = [
+#     {"nome": "Alice", "email": "alice@example.com"},
+#     {"nome": "Bob", "email": ""},
+#     {"nome": "Carol", "email": "carol@example.com"}
+# ]
+
+# usuarios_validos = [usuario for usuario in usuarios if not usuario["email"]]
+# print(usuarios_validos) 
 
 ### Exercício 9. Extração de Subconjuntos de Dados
 # Objetivo:** Dada uma lista de números, extrair apenas aqueles que são pares.
+# Obs: a variavel 'Numero' é cada valor dentro do range
+# numeros = range(1, 11)
+# pares = [numero for numero in numeros if numero % 2 == 0]
+
+# print(pares)
 
 ### Exercício 10. Agregação de Dados por Categoria
 # Objetivo:** Dado um conjunto de registros de vendas, calcular o total de vendas por categoria.
+vendas = [
+    {"categoria": "eletrônicos", "valor": 1200},
+    {"categoria": "livros", "valor": 200},
+    {"categoria": "eletrônicos", "valor": 800}
+]
+
+total_venda_categoria = {}
+for venda in vendas:
+    categoria = venda["categoria"]
+    valor = venda["valor"]
+    if categoria in total_venda_categoria:
+        total_venda_categoria[categoria] += valor
+    else:
+        total_venda_categoria[categoria] = valor
+print(total_venda_categoria)
+
 
 ### Exercícios com WHILE
 
